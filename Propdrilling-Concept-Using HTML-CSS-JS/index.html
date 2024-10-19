@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .family{
+            display: flex;
+            justify-content: left;
+            margin: 1rem;
+            border: 5px solid #000;
+            padding: 0.5rem;
+        }
+ 
+        .parent{
+            border: 5px solid #000;
+            padding: 0.5rem;
+        }
+
+        .child{
+            border: 3px solid #ff5722;
+            padding: 0.5rem 0 0 1 rem;
+        }
+        .gson{
+            border: 2px solid #3f515b;
+            padding: 0.5rem 0 0 1.5rem;
+            margin: 0.2rem;
+        }
+        .gdaughter{
+                border: 2px solid #e929ad;
+                padding: 0.5rem 0 0 1.5rem;
+                margin: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="family">
+            <h3>Family</h3>
+            <div class="parent">
+                <h3>Parents</h3>
+                <div class="child">
+                    <h3>Children</h3>
+                    <div class="gson">
+                        <h3>GrandSon</h3>
+                    </div>
+                    <div class="gdaughter">
+                        <h3>GrandDaughter</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script text='script/js'>
+            const familyMessage={
+                familyName:'Invincibles'
+            }
+        
+        function applyFamilyContext() {
+            // Append the context value to the <h3> tags based on their class names
+            const family = document.querySelector('.family h3');
+            const parents = document.querySelector('.parent h3');
+            const children = document.querySelector('.child h3');
+            const grandson = document.querySelector('.gson h3');
+            const granddaughter = document.querySelector('.gdaughter h3');
+
+            family.textContent += ` - ${familyMessage.familyName}`;
+            parents.textContent += ` - ${familyMessage.familyName}`;
+            children.textContent += ` - ${familyMessage.familyName}`;
+            grandson.textContent += ` - ${familyMessage.familyName}`;
+            granddaughter.textContent += ` - ${familyMessage.familyName}`;
+        }
+
+        // Call the function to apply the context
+        applyFamilyContext();
+    </script>
+</body>
+</html>
